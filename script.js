@@ -38,14 +38,14 @@ function addFavoriteThings() {
   //   - https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
   
   let fav = document.getElementById("favthings");
-  if(fav.li == null){
+  
   let li = document.createElement('li');
   li.textContent = 'Movie';
   fav.appendChild(li);
   li = document.createElement('li');
   li.textContent = 'Soccer';
   fav.appendChild(li);
-  }
+
 
 }
 

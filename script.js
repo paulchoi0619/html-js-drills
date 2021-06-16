@@ -22,7 +22,7 @@ function addName() {
   // - https://www.w3schools.com/jsref/prop_node_innertext.asp
 
   let nameElement = document.querySelector('#name');
-  nameElement.innerText = 'Steve';
+  nameElement.innerText = 'Paul';
 }
 
 function addFavoriteThings() {
@@ -36,13 +36,16 @@ function addFavoriteThings() {
   //   - https://htmldog.com/guides/javascript/advanced/creatingelements/
   //   - https://www.javascripttutorial.net/javascript-dom/javascript-createelement/
   //   - https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
+  
   let fav = document.getElementById("favthings");
+  if(fav.li == null){
   let li = document.createElement('li');
   li.textContent = 'Movie';
   fav.appendChild(li);
   li = document.createElement('li');
   li.textContent = 'Soccer';
   fav.appendChild(li);
+  }
 
 }
 
@@ -133,6 +136,7 @@ informationForm.addEventListener('submit', function(event) {
   let humancheck = document.getElementById("humancheck");
   let codercheck = document.getElementById("codercheck");
   if(humancheck.checked && codercheck.checked){
+    document.getElementById("checks").textContent =null;
     let li = document.createElement('li');
     li.textContent = humancheck.labels[0].innerText;
     document.getElementById("checks").appendChild(li);

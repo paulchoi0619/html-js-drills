@@ -22,7 +22,7 @@ function addName() {
   // - https://www.w3schools.com/jsref/prop_node_innertext.asp
 
   let nameElement = document.querySelector('#name');
-  nameElement.innerText = 'See script.js!';
+  nameElement.innerText = 'Steve';
 }
 
 function addFavoriteThings() {
@@ -36,6 +36,14 @@ function addFavoriteThings() {
   //   - https://htmldog.com/guides/javascript/advanced/creatingelements/
   //   - https://www.javascripttutorial.net/javascript-dom/javascript-createelement/
   //   - https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
+  let fav = document.getElementById("favthings");
+  let li = document.createElement('li');
+  li.textContent = 'Movie';
+  fav.appendChild(li);
+  li = document.createElement('li');
+  li.textContent = 'Soccer';
+  fav.appendChild(li);
+
 }
 
 function replaceImage() {

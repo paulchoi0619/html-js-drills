@@ -54,6 +54,9 @@ function replaceImage() {
   // See:
   // - https://www.tutorialrepublic.com/javascript-tutorial/javascript-dom-get-set-attributes.php
   // - https://www.w3schools.com/jsref/met_element_setattribute.asp
+  let pic  = document.getElementById("picture");
+  pic.setAttribute("src", "michael.jpg");
+  pic.style.width = "350px";
 }
 
 function changeCodeStatus() {
@@ -62,6 +65,15 @@ function changeCodeStatus() {
   // 1. Get a reference to <div id="codestatus">
   // 2. Create image element containing a sweet ol' meme
   // 3. Replace text in codestatus w/ image
+  let code = document.getElementById("codestatus");
+  let img = document.createElement("img");
+  img.setAttribute("src","meme.png");
+  img.style.width = "250px";
+  img.style.height = "250px";
+
+  code.textContent = null;
+  code.appendChild(img);
+
 }
 
 // Get a reference to the button w/ id="show-info-button"
@@ -93,9 +105,9 @@ showInfoButton.addEventListener('click', function() {
 let informationForm = document.querySelector('#information-form');
 
 // Do something when form is submitted
+
 informationForm.addEventListener('submit', function(event) {
   event.preventDefault(); // You will want this here. Remove it and see what changes.
-
   console.log('Form submitted');
 
   // Your job:
@@ -104,7 +116,22 @@ informationForm.addEventListener('submit', function(event) {
 
   // Google things like:
   //   javascript form element get values
+  let fName = document.getElementById('fname').value;
+  document.getElementById("firstname").textContent = fName;
+  let lName = document.getElementById('lname').value;
+  document.getElementById("lastname").textContent =lName;
+  let favCar = document.getElementById('cars').value;
+  document.getElementById("chosencar").textContent =favCar;
+  let ice = document.getElementById("icecreamyes");
+  if (ice.checked){
+    document.getElementById("icecreamstatus").textContent =ice.value;
+  }
+  else{
+    document.getElementById("icecreamstatus").textContent =document.getElementById("icecreamno").value;
+  }
+  
 });
+
 
 /*************************************
  * Section 3 - Clicks and Keypresses *

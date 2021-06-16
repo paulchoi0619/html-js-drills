@@ -123,13 +123,29 @@ informationForm.addEventListener('submit', function(event) {
   let favCar = document.getElementById('cars').value;
   document.getElementById("chosencar").textContent =favCar;
   let ice = document.getElementById("icecreamyes");
+  let ice2= document.getElementById("icecreamno");
   if (ice.checked){
     document.getElementById("icecreamstatus").textContent =ice.value;
   }
-  else{
-    document.getElementById("icecreamstatus").textContent =document.getElementById("icecreamno").value;
+  else if(ice2.checked){
+    document.getElementById("icecreamstatus").textContent =ice2.value;
   }
-  
+  let humancheck = document.getElementById("humancheck");
+  let codercheck = document.getElementById("codercheck");
+  if(humancheck.checked && codercheck.checked){
+    let li = document.createElement('li');
+    li.textContent = humancheck.labels[0].innerText;
+    document.getElementById("checks").appendChild(li);
+    li = document.createElement('li');
+    li.textContent = codercheck.labels[0].innerText;
+    document.getElementById("checks").appendChild(li);
+  }
+  else if(codercheck.checked){
+    document.getElementById("checks").textContent = codercheck.labels[0].innerText;
+  }
+  else if(humancheck.checked){
+    document.getElementById("checks").textContent = humancheck.labels[0].innerText;
+  }
 });
 
 

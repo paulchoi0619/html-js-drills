@@ -38,13 +38,14 @@ function addFavoriteThings() {
   //   - https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
   
   let fav = document.getElementById("favthings");
-  
-  let li = document.createElement('li');
-  li.textContent = 'Movie';
-  fav.appendChild(li);
-  li = document.createElement('li');
-  li.textContent = 'Soccer';
-  fav.appendChild(li);
+  const favList = ["Movie","Soccer"]
+  var i;
+  for(i=0;i<favList.length; i++){
+    let li = document.createElement('li');
+    li.textContent = favList[i];
+    fav.appendChild(li);
+  }
+ 
 
 
 }
@@ -60,6 +61,7 @@ function replaceImage() {
   let pic  = document.getElementById("picture");
   pic.setAttribute("src", "michael.jpg");
   pic.style.width = "350px";
+  pic.style.height= "auto";
 }
 
 function changeCodeStatus() {
@@ -72,7 +74,7 @@ function changeCodeStatus() {
   let img = document.createElement("img");
   img.setAttribute("src","meme.png");
   img.style.width = "250px";
-  img.style.height = "250px";
+  img.style.height = "auto";
 
   code.textContent = null;
   code.appendChild(img);

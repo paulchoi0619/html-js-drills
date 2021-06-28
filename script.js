@@ -224,11 +224,11 @@ document.addEventListener('keydown', function(event) {
  */
 
 
-let i =0;
+
 let submit = document.querySelector(".form");
 let lists = document.getElementById("todos");
 let box = document.querySelector(".title");
-
+let buttons=[];
 submit.addEventListener('submit',function(event){
   
   event.preventDefault();
@@ -240,7 +240,7 @@ submit.addEventListener('submit',function(event){
   
   
   
-  /*
+ /*
   let deleteButton = document.createElement('button');
 
   deleteButton.type = 'button';
@@ -252,8 +252,8 @@ submit.addEventListener('submit',function(event){
  
   
   deleteButton.addEventListener('click', function(event){
-  console.log(items);
-  lists.removeChild(items);
+  console.log(itemList);
+  lists.removeChild(itemList);
   deleteButton.remove();
   
   });
@@ -311,4 +311,16 @@ setTimeout(function(){img.src="bean.jpg";},5000);
  *
  */
 
-// Your code goes here
+ document.getElementById('spanish').addEventListener('fullscreenchange', function(event){
+ 
+  if (document.fullscreenElement) {
+    setTimeout(function(){document.exitFullscreen();},5000); //exits fullscreen after five seconds
+    
+  } 
+});
+
+document.getElementById('toggle-fullscreen').addEventListener('click', function(event){
+
+    document.getElementById('spanish').requestFullscreen();
+    document.getElementsByClassName('display').style.display="none";
+});

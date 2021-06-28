@@ -223,7 +223,44 @@ document.addEventListener('keydown', function(event) {
  *   it is next to.
  */
 
-// Your code goes here
+
+let i =0;
+let submit = document.querySelector(".form");
+let lists = document.getElementById("todos");
+let box = document.querySelector(".title");
+
+submit.addEventListener('submit',function(event){
+  
+  event.preventDefault();
+  
+  let text = document.querySelector("#todo");
+  let itemList = document.createElement('li');
+  itemList.textContent = text.value;
+  lists.appendChild(itemList);
+  
+  
+  
+  /*
+  let deleteButton = document.createElement('button');
+
+  deleteButton.type = 'button';
+  deleteButton.textContent="Delete";
+  deleteButton.style.width = "55px";
+  deleteButton.style.height = "25px";
+ 
+  itemList.appendChild(deleteButton);
+ 
+  
+  deleteButton.addEventListener('click', function(event){
+  console.log(items);
+  lists.removeChild(items);
+  deleteButton.remove();
+  
+  });
+  */
+
+});
+
 
 /****************************************
  * Section 5 - setInterval + setTimeout *
@@ -241,9 +278,27 @@ document.addEventListener('keydown', function(event) {
  *   - https://javascript.info/settimeout-setinterval
  *
  */
+let j =1;
+let counter = document.querySelector("#seconds");
+function stopWatch(){
+  
+  let textj = document.createTextNode(j);
 
-// Your code goes here
+ counter.parentNode.insertBefore(textj,counter);
+ setTimeout(function(){counter.parentNode.removeChild(textj);},900);
+  j++;
+}
+setInterval(function() {stopWatch();},1000);
 
+let display = document.querySelector("#delayedDisplay");
+let div = document.createElement("div");
+let img = document.createElement("img");
+img.src = "";
+img.className = "meme";
+div.appendChild(img);
+display.parentNode.insertBefore(div,display);
+
+setTimeout(function(){img.src="bean.jpg";},5000);
 /****************************************
  * Section 6 - Your own section!        *
  ****************************************
